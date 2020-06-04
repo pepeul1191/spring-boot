@@ -15,11 +15,48 @@ Ejecutar Java Main Class definido en el pom.xml
     
 Ejecutar Spring Boot [4]    
 
-    mvn spring-boot:run
+    $ mvn spring-boot:run
+
+```xml
+<build>
+    ...
+    <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+        <excludeDevtools>false</excludeDevtools>
+        <mainClass>ruta.al.main.class</mainClass>
+        </configuration>
+    </plugin>
+    ...
+</build>
+```
 
 Ejecutar Main Class de manera manual:
 
-    $ mvn clean && mvn install && mvn exec:java -Dexec.mainClass="ruta.al.main.class"
+    $ mvn clean && mvn install && mvn exec:java
+
+```xml
+<build>
+    ...
+    <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.2.1</version>
+        <executions>
+        <execution>
+            <goals>
+            <goal>java</goal>
+            </goals>
+        </execution>
+        </executions>
+        <configuration>
+        <mainClass>ruta.al.main.class</mainClass>
+        </configuration>
+    </plugin>
+    ...
+</build>
+```
 
 ### Configuración de la carpeta de archivos estáticos
 
