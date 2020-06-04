@@ -76,6 +76,7 @@ Agregar en pom.xml
         <optional>true</optional>
     </dependency>
 </dependencies>
+
 ```
 
 En aplication.properties
@@ -85,6 +86,10 @@ spring.devtools.livereload.enabled=true
 spring.devtools.restart.exclude=static/**,public/**
 spring.devtools.restart.enabled=true
 ```
+
+### Freemaker
+
+Ver link [7]
 
 ---
 
@@ -96,3 +101,4 @@ Fuentes:
 [4] https://github.com/spring-projects/spring-boot/issues/3315 <br>
 [5] https://www.codejava.net/frameworks/spring-boot/ spring-boot-auto-reload-changes-using-livereload-and-devtools <br>
 [6] https://docs.spring.io/spring-boot/docs/1.5.16.RELEASE/reference/html/using-boot-devtools.html <br>
+[7] http://zetcode.com/springboot/freemarker/ <br>

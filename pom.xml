@@ -36,6 +36,11 @@
       <scope>runtime</scope>
       <optional>true</optional>
     </dependency>
+    <!-- Freemaker Template Engine -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-freemarker</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <finalName>boot</finalName>
