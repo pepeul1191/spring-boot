@@ -1,4 +1,4 @@
-package configs;
+package pe.softweb.config;
 
 public class Test {
     public static void main(String[] args) {

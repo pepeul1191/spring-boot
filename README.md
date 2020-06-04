@@ -102,3 +102,4 @@ Fuentes:
 [5] https://www.codejava.net/frameworks/spring-boot/ spring-boot-auto-reload-changes-using-livereload-and-devtools <br>
 [6] https://docs.spring.io/spring-boot/docs/1.5.16.RELEASE/reference/html/using-boot-devtools.html <br>
 [7] http://zetcode.com/springboot/freemarker/ <br>
+[8] http://zetcode.com/springboot/controller/ <br>
