@@ -91,6 +91,14 @@ spring.devtools.restart.enabled=true
 
 Ver link [7]
 
+### Estructura de la apliacion
+
+Ver link [8]
+
+### Mostrar logs
+
+Ver link [9]
+
 ---
 
 Fuentes:
@@ -103,3 +111,4 @@ Fuentes:
 [6] https://docs.spring.io/spring-boot/docs/1.5.16.RELEASE/reference/html/using-boot-devtools.html <br>
 [7] http://zetcode.com/springboot/freemarker/ <br>
 [8] http://zetcode.com/springboot/controller/ <br>
+[9] https://stackoverflow.com/questions/33744875/spring-boot-how-to-log-all-requests-and-responses-with-exceptions-in-single-pl <br>

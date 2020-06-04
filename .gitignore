@@ -19,3 +19,5 @@ package-lock.json
 Gemfile.lock
 
 db/ubicaciones.db
+
+*.log
