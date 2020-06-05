@@ -1,11 +1,21 @@
 # Spring Boot
 
-## Configuración del Ambiente de Desarrollo - Ubuntu 20.04
+## Configuración del Ambiente de Desarrollo
 
-Instalación de Java JDK 11 y Maven:
+Instalación de Java JDK 11 y Maven en Ubuntu 20.04:
 
     $ sudo apt update
     $ sudo apt install openjdk-11-jdk maven
+
+Instalación de Java JDK 11 y Maven en Ubuntu 16.04:
+
+    $ sudo add-apt-repository ppa:openjdk-r/ppa
+    $ sudo apt-get update
+    $ sudo apt install openjdk-11-jdk
+
+Cambiar de versión de Java:
+
+    $ sudo update-alternatives --config java
 
 ## Ejecutar la Aplicación en Maven
 
@@ -99,6 +109,10 @@ Ver link [8]
 
 Ver link [9]
 
+### Servidor Jetty
+
+Ver link [10]
+
 ---
 
 Fuentes:
@@ -112,3 +126,4 @@ Fuentes:
 [7] http://zetcode.com/springboot/freemarker/ <br>
 [8] http://zetcode.com/springboot/controller/ <br>
 [9] https://stackoverflow.com/questions/33744875/spring-boot-how-to-log-all-requests-and-responses-with-exceptions-in-single-pl <br>
+[10] https://howtodoinjava.com/spring-boot/configure-jetty-server/
