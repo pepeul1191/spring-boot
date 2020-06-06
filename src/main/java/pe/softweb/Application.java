@@ -11,19 +11,22 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 @SpringBootApplication
 public class Application {
-  public static void main(String[] args) {
+  public static void main(String[] args) 
+  {
     SpringApplication.run(Application.class, args);
   }
 
   @GetMapping("/home")
-  public ModelAndView home(@RequestParam(value = "name", defaultValue = "World") String name) {
+  public ModelAndView home(@RequestParam(value = "name", defaultValue = "World") String name) 
+  {
     var params = new HashMap<String, Object>();
     params.put("name", name);
     return new ModelAndView("home", params);
   }
 
   @GetMapping("/hello")
-  public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
+  public String hello(@RequestParam(value = "name", defaultValue = "World") String name) 
+  {
     System.out.println("1 +++++++");
     return String.format("Hello %s!", name);
   }

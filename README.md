@@ -115,7 +115,7 @@ Ver link [10]
 
 ### Filters
 
-Ver video del link [11]
+Ver video del link [11], [12]
 
 ---
 
@@ -132,3 +132,4 @@ Fuentes:
 [9] https://stackoverflow.com/questions/33744875/spring-boot-how-to-log-all-requests-and-responses-with-exceptions-in-single-pl <br>
 [10] https://howtodoinjava.com/spring-boot/configure-jetty-server/ <br>
 [11] https://www.youtube.com/watch?v=bDektisPQQM <br>
+[12] https://www.techiedelight.com/add-custom-header-to-all-responses-spring-boot/ <br>

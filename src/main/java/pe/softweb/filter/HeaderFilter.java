@@ -1,29 +1,21 @@
 package pe.softweb.filter;
 
-import javax.servlet.Filter;
+import org.springframework.web.filter.OncePerRequestFilter;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
 import java.io.IOException;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HeaderFilter implements Filter{
+public class HeaderFilter extends OncePerRequestFilter
+{
   @Override
-   public void destroy() {}
-
-   @Override
-  public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterchain) 
-      throws IOException, ServletException {
-    HttpServletRequest req = (HttpServletRequest) request;
-    MutableHttpServletRequest mutableRequest = new MutableHttpServletRequest(req);
-    mutableRequest.putHeader("Server", "Ubuntu, Jetty");
-    chain.doFilter(mutableRequest, response);
-    filterchain.doFilter(request, response);
+  protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+    throws ServletException, IOException 
+  {
+    response.addHeader("Server", "Ubuntu, Jetty");
+    filterChain.doFilter(request, response);
   }
-
-   @Override
-   public void init(FilterConfig filterconfig) throws ServletException {}
 }

@@ -1,17 +1,18 @@
 package pe.softweb.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
-public class DemoController {
-
-	private static final String path = "/demo";
-
-  @GetMapping(path + "/hello")
-	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
+@RequestMapping(value = "/demo")
+public class DemoController 
+{
+  @RequestMapping(value = "/hello", method = RequestMethod.GET)
+  public String hello(@RequestParam(value = "name", defaultValue = "World") String name) 
+  {
     System.out.println("2 +++++++");
-		return String.format("Hello Demo %s!", name);
-	}
+    return String.format("Hello Demo %s!", name);
+  }
 }
