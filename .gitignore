@@ -22,3 +22,4 @@ db/ubicaciones.db
 
 *.log
 *.gz
+*.tmp

@@ -12,7 +12,6 @@ public class DemoController
   @RequestMapping(value = "/hello", method = RequestMethod.GET)
   public String hello(@RequestParam(value = "name", defaultValue = "World") String name) 
   {
-    System.out.println("2 +++++++");
     return String.format("Hello Demo %s!", name);
   }
 }
