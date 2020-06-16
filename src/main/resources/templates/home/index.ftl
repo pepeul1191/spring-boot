@@ -7,6 +7,6 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  hola ${name}
+  hola : ${name}
 </body>
 </html>

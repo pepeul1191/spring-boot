@@ -117,6 +117,10 @@ Ver link [10]
 
 Ver video del link [11], [12]
 
+### YAMLs
+
+[14] [15]
+
 ---
 
 Fuentes:
@@ -134,3 +138,5 @@ Fuentes:
 [11] https://www.youtube.com/watch?v=bDektisPQQM <br>
 [12] https://www.techiedelight.com/add-custom-header-to-all-responses-spring-boot/ <br>
 [13] https://code.visualstudio.com/docs/editor/tasks <br>
+[14] https://www.logicbig.com/tutorials/misc/yaml/snake-yaml-loading.html <br>
+[15] https://www.baeldung.com/java-snake-yaml <br>
