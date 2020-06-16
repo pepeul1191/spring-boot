@@ -1,0 +1,55 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Project Clean",
+      "command": "mvn clean",
+      "windows": {
+        "command": ".\\scripts\\test.cmd"
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "Project Install",
+      "command": "mvn install",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "Spring Run Hot Reload",
+      "command": "mvn spring-boot:run",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "problemMatcher": [
+        "$eslint-compact"
+      ]
+    },
+    {
+      "label": "Project - Clean - Install - Run",
+      "dependsOn": [
+        "Project Clean",
+        "Project Install",
+        "Spring Run Hot Reload"
+      ]
+    }
+  ]
+}

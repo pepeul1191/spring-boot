@@ -8,13 +8,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 @RequestMapping(value = "/")
-public class HomeController 
+public class HomeController extends ApplicationController
 {
   @RequestMapping(value = "/", method = RequestMethod.GET)
   public ModelAndView index() 
   {
     var params = new HashMap<String, Object>();
-    params.put("name", "Pepe");
+    params.put("name", "Pepe " + this.constant);
     return new ModelAndView("home/index", params);
   }
 }
