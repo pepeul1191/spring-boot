@@ -15,9 +15,11 @@ public class HomeController extends ApplicationController
   {
     var params = new HashMap<String, Object>();
     System.out.println("1 ++++++++++++++++++++++++++++");
-    System.out.println(this.constants.get("BASE_URL"));
+    System.out.println(this.constants.get("base_url"));
     System.out.println("2 ++++++++++++++++++++++++++++");
+    params.put("constants", this.constants);
     params.put("name", "Pepe ");
+    params.put("title", "Home");
     return new ModelAndView("home/index", params);
   }
 }
