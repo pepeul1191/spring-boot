@@ -1,34 +1,34 @@
 package pe.softweb.config;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 import org.javalite.activejdbc.DB;
 import org.javalite.activejdbc.DBException;
-import org.json.JSONObject;
-import org.yaml.snakeyaml.Yaml;
+import java.util.Properties;
 
-public class Database{
+public class Database {
   private DB db;
-	
-  public Database(){
+
+  public Database() {
     this.db = new DB();
   }
 
-  public DB getDb(){
-    return this.db; 
+  public DB getDb() {
+    return this.db;
   }
 
-  public void open() throws DBException{
-    // read yaml and parse to json
-    Yaml yaml = new Yaml();
-    InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("contents/_databases.yml");    
-    Map<String, Object>  temp = yaml.load(inputStream);
-    JSONObject databaseParams = new JSONObject(temp);
+  public void open() throws DBException, IOException {
+    InputStream input = new FileInputStream("src/main/resources/application.properties");
+    Properties properties = new Properties();
+    properties.load(input);
     // Database instance
-    String driver = databaseParams.getJSONObject("demo").getString("driver");
-    String url = databaseParams.getJSONObject("demo").getString("url");
-    String user = databaseParams.getJSONObject("demo").getString("user");
-    String password = databaseParams.getJSONObject("demo").getString("password");
+    String driver = properties.getProperty("db.driver");
+    String url = properties.getProperty("db.url");
+    String user = properties.getProperty("db.user");
+    String password = properties.getProperty("db.password");
 	  this.db.open(driver, url, user, password);
   }
 

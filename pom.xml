@@ -52,12 +52,6 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-freemarker</artifactId>
     </dependency>
-    <!-- yaml -->
-    <dependency>
-      <groupId>org.yaml</groupId>
-      <artifactId>snakeyaml</artifactId>
-      <version>1.21</version>            
-    </dependency>
     <!-- Database -->
 		<dependency>
 		  <groupId>org.xerial</groupId>
