@@ -12,9 +12,9 @@ public abstract class ApplicationController
   public ApplicationController()
   {
     try (InputStream input = new FileInputStream("src/main/resources/application.properties")) {
+      // load constants
       this.constants = new Properties();
       this.constants.load(input);
-      //System.out.println(prop.getProperty("db.password"));
     } catch (IOException ex) {
       ex.printStackTrace();
     }

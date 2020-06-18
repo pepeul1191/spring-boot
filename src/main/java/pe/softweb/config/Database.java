@@ -1,10 +1,8 @@
 package pe.softweb.config;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Map;
 import org.javalite.activejdbc.DB;
 import org.javalite.activejdbc.DBException;
 import java.util.Properties;
