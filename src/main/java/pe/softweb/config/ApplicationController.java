@@ -1,10 +1,10 @@
-package pe.softweb.controller;
+package pe.softweb.config;
 
 import java.io.InputStream;
 import java.util.Map;
 import org.yaml.snakeyaml.Yaml;
 
-public class ApplicationController 
+public abstract class ApplicationController 
 {
   protected Map<String, Object> constants;
 

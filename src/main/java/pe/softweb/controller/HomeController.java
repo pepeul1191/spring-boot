@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import pe.softweb.config.ApplicationController;
 
 @RestController
 @RequestMapping(
@@ -20,7 +21,7 @@ public class HomeController extends ApplicationController
   public ModelAndView index() 
   {
     // render view
-    var params = new HashMap<String, Object>();
+    final var params = new HashMap<String, Object>();
     params.put("constants", this.constants);
     params.put("name", "Pepe ");
     params.put("title", "Home");
