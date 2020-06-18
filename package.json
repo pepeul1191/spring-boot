@@ -1,0 +1,12 @@
+{
+  "name": "spring-boot",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "bower:install": "./node_modules/.bin/bower install"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.8.8"
+  }
+}
