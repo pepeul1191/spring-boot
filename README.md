@@ -121,6 +121,10 @@ Ver video del link [11], [12]
 
 [14] [15]
 
+### Java Lite
+
+[16] [17]
+
 ---
 
 Fuentes:
@@ -140,3 +144,5 @@ Fuentes:
 [13] https://code.visualstudio.com/docs/editor/tasks <br>
 [14] https://www.logicbig.com/tutorials/misc/yaml/snake-yaml-loading.html <br>
 [15] https://www.baeldung.com/java-snake-yaml <br>
+[16] https://www.geekyhacker.com/2019/05/15/how-to-use-activejdbc-with-spring-boot/ <br>
+[17] https://www.baeldung.com/javalite-rest <br>

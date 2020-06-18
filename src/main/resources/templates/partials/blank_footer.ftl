@@ -1,5 +1,5 @@
   <script>
-    console.log('XD);
+    console.log('XD');
   </script>
   </body>
 </html>

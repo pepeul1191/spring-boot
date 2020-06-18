@@ -1,0 +1,5 @@
+demo:
+  driver: org.sqlite.JDBC
+  url: jdbc:sqlite:./db/coa.db
+  user: ""
+  password: ""

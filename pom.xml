@@ -58,6 +58,23 @@
       <artifactId>snakeyaml</artifactId>
       <version>1.21</version>            
     </dependency>
+    <!-- Database -->
+		<dependency>
+		  <groupId>org.xerial</groupId>
+		  <artifactId>sqlite-jdbc</artifactId>
+		  <version>3.18.0</version>
+		</dependency>	
+    <dependency>
+      <groupId>org.javalite</groupId>
+      <artifactId>activejdbc</artifactId>
+      <version>2.3.2-j8</version>
+    </dependency>
+    <!-- JSON -->
+    <dependency>
+		  <groupId>org.json</groupId>
+		  <artifactId>json</artifactId>
+		  <version>20170516</version>
+		</dependency>
   </dependencies>
   <build>
     <finalName>boot</finalName>
@@ -92,6 +109,20 @@
           <excludeDevtools>false</excludeDevtools>
           <mainClass>pe.softweb.Application</mainClass>
         </configuration>
+      </plugin>
+      <!-- Models instrumentation - JavaLite -->
+      <plugin>
+        <groupId>org.javalite</groupId>
+        <artifactId>activejdbc-instrumentation</artifactId>
+        <version>2.3.2-j8</version>
+        <executions>
+          <execution>
+            <phase>process-classes</phase>
+              <goals>
+                <goal>instrument</goal>
+              </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
     <!--Recursos a compilación -->

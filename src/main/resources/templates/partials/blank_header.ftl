@@ -9,6 +9,7 @@
 	<meta charset="UTF-8">
 	<title>${title}</title>
   <script type="text/javascript">
-    
+    const BASE_URL = "${constants["base_url"]}";
+    const STATIC_URL = "${constants["static_url"]}";
   </script>
 <body>
