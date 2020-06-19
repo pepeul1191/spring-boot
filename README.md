@@ -86,7 +86,23 @@ Agregar en pom.xml
         <optional>true</optional>
     </dependency>
 </dependencies>
-
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!-- Autorelaod -->
+            <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <excludeDevtools>false</excludeDevtools>
+                <mainClass>ruta.de.paquetes.al.applicationclass</mainClass>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 ```
 
 En aplication.properties
@@ -125,6 +141,10 @@ Ver video del link [11], [12]
 
 [16] [17]
 
+### Error Page - Jetty
+
+[18]
+
 ---
 
 Fuentes:
@@ -146,3 +166,5 @@ Fuentes:
 [15] https://www.baeldung.com/java-snake-yaml <br>
 [16] https://www.geekyhacker.com/2019/05/15/how-to-use-activejdbc-with-spring-boot/ <br>
 [17] https://www.baeldung.com/javalite-rest <br>
+[18] https://howtodoinjava.com/spring-boot/configure-jetty-server/ <br>
+[19] https://stackoverflow.com/questions/56281850/spring-redirect-from-errorcontroller <br>
