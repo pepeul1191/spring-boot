@@ -16,6 +16,7 @@ public class HeaderFilter extends OncePerRequestFilter
     throws ServletException, IOException 
   {
     response.addHeader("Server", "Ubuntu, Jetty");
+    response.addHeader("X-Application-Context", "");
     filterChain.doFilter(request, response);
   }
 }
