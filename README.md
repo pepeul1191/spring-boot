@@ -145,6 +145,14 @@ Ver video del link [11], [12]
 
 [18]
 
+### Migraciones
+
+Migraciones con DBMATE - accesos:
+
+    $ dbmate -d "db/migrations" -e "DB" new <<nombre_de_migracion>>
+    $ dbmate -d "db/migrations" -e "DB" up
+    $ dbmate -d "db/migrations" -e "DB" rollback
+
 ---
 
 Fuentes:

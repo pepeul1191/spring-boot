@@ -16,7 +16,7 @@ import pe.softweb.model.Specialism;
 public class SpecialismController extends ApplicationController
 {
   @RequestMapping(
-    value = "/list", 
+    value = {"/list", "/listar"}, 
     method = RequestMethod.GET,
     produces={"text/html; charset=utf-8"}  
   )
