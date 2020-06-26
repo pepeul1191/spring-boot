@@ -5,13 +5,16 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import pe.softweb.config.Database;
 import pe.softweb.helper.DemoHelper;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import org.springframework.http.ResponseEntity;
+import org.json.JSONArray;
 import org.springframework.http.HttpStatus;
+import pe.softweb.model.demo.Type;
 
 @RestController
 @RequestMapping(
@@ -85,10 +88,8 @@ public class DemoController extends ApplicationController
   )
   public ModelAndView pokemon(HttpServletRequest request) 
   {
-    // session
-    
+    // get session
     HttpSession session = request.getSession();
-    // String name = String.valueOf(session.getAttribute("name"));
     String name = ((String.valueOf(session.getAttribute("name")).equalsIgnoreCase("null")) ? "Pepe Valdivia" : String.valueOf(session.getAttribute("name")));
     String code = ((String.valueOf(session.getAttribute("code")).equalsIgnoreCase("null")) ? "20051191" : String.valueOf(session.getAttribute("code")));
     // locals
@@ -104,6 +105,34 @@ public class DemoController extends ApplicationController
     ModelAndView model =  new ModelAndView("demo/pokemon", locals);
     model.setStatus(HttpStatus.ACCEPTED);
     return model;
+  }
+
+  @RequestMapping(
+    value = "/pokemon/type/list", 
+    method = RequestMethod.GET,
+    produces={"text/html; charset=utf-8"}  
+  )
+  public ResponseEntity<String> pokemonTypelist() 
+  {
+    String response = "";
+    HttpStatus status = HttpStatus.OK;
+    Database db = new Database();
+    try {
+      db.open();
+      response = Type.findAll().toJson(true).toString();
+    }catch (Exception e) {
+      e.printStackTrace();
+      JSONArray error = new JSONArray();
+      error.put("Se ha producido un error en listar los tipos de pokemones");
+      error.put(e.toString());
+      response = error.toString();
+      status = HttpStatus.INTERNAL_SERVER_ERROR;
+    } finally {
+      if(db.getDb().hasConnection()){
+        db.close();
+      }
+    }
+    return new ResponseEntity<>(response, status);
   }
 
   //public ModelAndView hello(@RequestParam(value = "name", defaultValue = "World") String name) 

@@ -144,7 +144,7 @@ CREATE TABLE pokemons (
 	height	FLOAT,
 	img	VARCHAR(150)
 );
-CREATE VIEW vw_tyeps AS
+CREATE VIEW vw_types AS
 	SELECT type_1 AS type FROM pokemons
 	GROUP BY (type_1) ORDER BY type;
 -- Dbmate schema migrations
