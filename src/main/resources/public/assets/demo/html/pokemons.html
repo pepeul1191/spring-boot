@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script>
+    const BASE_URL = 'http://softweb.pe/ep/';
+  </script>
+  <style type="text/css">
+    .form-btn{
+      padding-top: 30px;
+    }
+    .card-body {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5>Examen Parcial - Pokemones</h5>
+        <p>20051191 - José Valdivia Caballero</p>
+      </div>
+      <div class="col-md-6">
+        <label for="" id="message"></label>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="slcTypes">Tipos de Pokemones</label>
+          <select class="form-control" id="slcTypes">
+            <option value="E"></option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="txtName">Nombre</label>
+          <input type="text" class="form-control" id="txtName">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group form-btn">
+          <button class="btn btn-success" id="btnSearch" onclick="buscar()">Buscar</button>
+          <button class="btn btn-warning" id="btnClean" onclick="limpiar()">Limpiar</button>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="pokemons">
+
+    </div>
+  </div>
+    <!-- JS -->
+  <script>
+  </script>
+</body>
+</html>

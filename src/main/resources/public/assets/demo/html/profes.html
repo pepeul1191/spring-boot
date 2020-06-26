@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <script>
+    const BASE_URL = 'http://softweb.pe/ep/';
+  </script>
+  <style type="text/css">
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5>Universidad de Lima, Plana Docente</h5>
+      </div>
+      <div class="col-md-6">
+        <label for="" id="message"></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="slcCarrers">Carreras</label>
+          <select class="form-control" id="slcCarrers">
+            <option value="E"></option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="txtName">Nombre</label>
+          <input type="text" class="form-control" id="txtName">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group form-btn">
+          <button class="btn btn-success" id="btnSearch" onclick="buscar()">Buscar</button>
+          <button class="btn btn-warning" id="btnClean" onclick="limpiar()">Limpiar</button>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="teachers">
+
+    </div>
+  </div>
+    <!-- JS -->
+  <script>
+  </script>
+</body>
+</html>
