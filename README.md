@@ -145,6 +145,10 @@ Ver video del link [11], [12]
 
 [18]
 
+### Sessions
+
+[20]
+
 ### Migraciones
 
 Migraciones con DBMATE - accesos:
@@ -176,3 +180,4 @@ Fuentes:
 [17] https://www.baeldung.com/javalite-rest <br>
 [18] https://howtodoinjava.com/spring-boot/configure-jetty-server/ <br>
 [19] https://stackoverflow.com/questions/56281850/spring-redirect-from-errorcontroller <br>
+[20] https://www.baeldung.com/java-servlet-cookies-session <br>

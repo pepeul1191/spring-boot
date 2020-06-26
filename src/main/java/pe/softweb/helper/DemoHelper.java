@@ -39,4 +39,35 @@ public class DemoHelper extends ApplicationHelper
       };
     }
   }  
+
+  public String[] pokemonCSS() 
+  {
+    if(constants.getProperty("app.static-env").equalsIgnoreCase("dev")){
+      return new String[] {
+        "bower_components/bootstrap/dist/css/bootstrap.min",
+        "assets/demo/css/styles",
+        "assets/demo/css/pokemon",
+      };  
+    }else{
+      return new String[] {
+        "bower_components/bootstrap/dist/css/bootstrap.min",
+        "assets/demo/css/styles",
+        "assets/demo/css/pokemon",
+      };
+    }
+    
+  }
+
+  public String[] pokemonJS() 
+  {
+    if(constants.getProperty("app.static-env").equalsIgnoreCase("dev")){
+      return new String[] {
+        "/assets/demo/js/pokemon"
+      };  
+    }else{
+      return new String[] {
+        "/assets/demo/js/pokemon"
+      };
+    }
+  }  
 }

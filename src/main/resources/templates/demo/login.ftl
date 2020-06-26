@@ -1,5 +1,5 @@
 <#include "../partials/blank_header.ftl"/>
-<form class="form-signin" action="/demo/login" method="post">
+<form class="form-signin" action="/demo/login" method="post" novalidate>
   <h1 class="h3 mb-3 font-weight-normal">Bienvenido</h1>
   <input type="hidden" name="key" value="value">
   <span class="extraData"></span>
