@@ -28,7 +28,7 @@ function buscar(){
       );
     }
     // AJAX
-    var url = BASE_URL + 'pokemon/search?name=' + document.getElementById('txtName').value + '&type=' + valType;
+    var url = BASE_URL + 'pokemon/search/' + valType + '?name=' + document.getElementById('txtName').value;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
       if (xhr.readyState == XMLHttpRequest.DONE) {

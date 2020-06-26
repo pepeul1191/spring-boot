@@ -1,5 +1,6 @@
 package pe.softweb.controller;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.http.ResponseEntity;
 import org.json.JSONArray;
 import org.springframework.http.HttpStatus;
+
+import pe.softweb.model.demo.Pokemon;
 import pe.softweb.model.demo.Type;
 
 @RestController
@@ -29,7 +32,7 @@ public class DemoController extends ApplicationController
   public ModelAndView login() 
   {
     // locals
-    DemoHelper helper = new DemoHelper(this.constants);
+    final DemoHelper helper = new DemoHelper(this.constants);
     final var locals = new HashMap<String, Object>();
     locals.put("constants", this.constants);
     locals.put("csss", helper.loginCSS());
@@ -38,7 +41,7 @@ public class DemoController extends ApplicationController
     locals.put("message_color", "");
     locals.put("title", "Login");
     // view
-    ModelAndView model =  new ModelAndView("demo/login", locals);
+    final ModelAndView model =  new ModelAndView("demo/login", locals);
     model.setStatus(HttpStatus.ACCEPTED);
     return model;
   }
@@ -49,15 +52,15 @@ public class DemoController extends ApplicationController
   )
   public ModelAndView loginAccess
   (
-    @RequestParam(value = "name", defaultValue = "") String name, 
-    @RequestParam(value = "code", defaultValue = "") String code,
-    HttpServletResponse response,
-    HttpServletRequest request
+    @RequestParam(value = "name", defaultValue = "") final String name, 
+    @RequestParam(value = "code", defaultValue = "") final String code,
+    final HttpServletResponse response,
+    final HttpServletRequest request
   ) 
   {
     if(name.equalsIgnoreCase("") || code.equalsIgnoreCase("")){
       // locals
-      DemoHelper helper = new DemoHelper(this.constants);
+      final DemoHelper helper = new DemoHelper(this.constants);
       final var locals = new HashMap<String, Object>();
       locals.put("constants", this.constants);
       locals.put("csss", helper.loginCSS());
@@ -66,16 +69,16 @@ public class DemoController extends ApplicationController
       locals.put("message_color", "text-danger");
       locals.put("title", "Login");
       // view
-      ModelAndView model =  new ModelAndView("demo/login", locals);
+      final ModelAndView model =  new ModelAndView("demo/login", locals);
       model.setStatus(HttpStatus.ACCEPTED);
       return model;
     }else{
       // set session
-      HttpSession session = request.getSession();
+      final HttpSession session = request.getSession();
       session.setAttribute("name", name);
       session.setAttribute("code", code);
       // redirect url
-      ModelAndView model =  new ModelAndView("redirect:/demo/pokemon");
+      final ModelAndView model =  new ModelAndView("redirect:/demo/pokemon");
       // ModelAndView model =  new ModelAndView("redirect:/demo/teacher");
       model.setStatus(HttpStatus.ACCEPTED);
       return model;
@@ -86,14 +89,14 @@ public class DemoController extends ApplicationController
     value = "/pokemon", 
     method = RequestMethod.GET
   )
-  public ModelAndView pokemon(HttpServletRequest request) 
+  public ModelAndView pokemon(final HttpServletRequest request) 
   {
     // get session
-    HttpSession session = request.getSession();
-    String name = ((String.valueOf(session.getAttribute("name")).equalsIgnoreCase("null")) ? "Pepe Valdivia" : String.valueOf(session.getAttribute("name")));
-    String code = ((String.valueOf(session.getAttribute("code")).equalsIgnoreCase("null")) ? "20051191" : String.valueOf(session.getAttribute("code")));
+    final HttpSession session = request.getSession();
+    final String name = ((String.valueOf(session.getAttribute("name")).equalsIgnoreCase("null")) ? "Pepe Valdivia" : String.valueOf(session.getAttribute("name")));
+    final String code = ((String.valueOf(session.getAttribute("code")).equalsIgnoreCase("null")) ? "20051191" : String.valueOf(session.getAttribute("code")));
     // locals
-    DemoHelper helper = new DemoHelper(this.constants);
+    final DemoHelper helper = new DemoHelper(this.constants);
     final var locals = new HashMap<String, Object>();
     locals.put("constants", this.constants);
     locals.put("csss", helper.pokemonCSS());
@@ -102,7 +105,7 @@ public class DemoController extends ApplicationController
     locals.put("code", code);
     locals.put("title", "Pokemones");
     // view
-    ModelAndView model =  new ModelAndView("demo/pokemon", locals);
+    final ModelAndView model =  new ModelAndView("demo/pokemon", locals);
     model.setStatus(HttpStatus.ACCEPTED);
     return model;
   }
@@ -116,10 +119,42 @@ public class DemoController extends ApplicationController
   {
     String response = "";
     HttpStatus status = HttpStatus.OK;
-    Database db = new Database();
+    final Database db = new Database();
     try {
       db.open();
       response = Type.findAll().toJson(true).toString();
+    }catch (final Exception e) {
+      e.printStackTrace();
+      final JSONArray error = new JSONArray();
+      error.put("Se ha producido un error en listar los tipos de pokemones");
+      error.put(e.toString());
+      response = error.toString();
+      status = HttpStatus.INTERNAL_SERVER_ERROR;
+    } finally {
+      if(db.getDb().hasConnection()){
+        db.close();
+      }
+    }
+    return new ResponseEntity<>(response, status);
+  }
+
+  @RequestMapping(
+    value = "/pokemon/search/{type}", 
+    method = RequestMethod.GET,
+    produces={"text/html; charset=utf-8"}  
+  )
+  public ResponseEntity<String> pokemonSearch(
+    @RequestParam(value = "name", defaultValue = "") String name,
+    @PathVariable(value = "type") String type
+  ) 
+  {
+    String response = "";
+    HttpStatus status = HttpStatus.OK;
+    Database db = new Database();
+    try {
+      db.open();
+      name = "%" + name + "%";
+      response = Pokemon.where("(type_1 = ? OR type_2 = ?) AND name LIKE ?", type, type, name).toJson(true).toString();
     }catch (Exception e) {
       e.printStackTrace();
       JSONArray error = new JSONArray();

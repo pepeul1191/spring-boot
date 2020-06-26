@@ -72,4 +72,12 @@
   <div class="row" id="pokemons">
   </div>
 </div>
-<#include "../partials/blank_footer.ftl"/>
+  <#if jss?has_content>
+    <#list jss as js>
+      <script type='text/javascript' src="${constants["app.static-url"]}${js}.js"></script>
+    </#list>
+  </#if>
+  <script>
+  </script>
+  </body>
+</html>
