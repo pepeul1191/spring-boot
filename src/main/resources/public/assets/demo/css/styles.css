@@ -9,3 +9,7 @@ html {
 #workspace{
   margin-top: 20px;
 }
+
+.text-warning {
+  color: peru !important;
+}

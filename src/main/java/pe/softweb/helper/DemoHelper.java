@@ -70,4 +70,35 @@ public class DemoHelper extends ApplicationHelper
       };
     }
   }  
+
+  public String[] teacherCSS() 
+  {
+    if(constants.getProperty("app.static-env").equalsIgnoreCase("dev")){
+      return new String[] {
+        "bower_components/bootstrap/dist/css/bootstrap.min",
+        "assets/demo/css/styles",
+        "assets/demo/css/teacher",
+      };  
+    }else{
+      return new String[] {
+        "bower_components/bootstrap/dist/css/bootstrap.min",
+        "assets/demo/css/styles",
+        "assets/demo/css/teacher",
+      };
+    }
+    
+  }
+
+  public String[] teacherJS() 
+  {
+    if(constants.getProperty("app.static-env").equalsIgnoreCase("dev")){
+      return new String[] {
+        "/assets/demo/js/teacher"
+      };  
+    }else{
+      return new String[] {
+        "/assets/demo/js/teacher"
+      };
+    }
+  }  
 }

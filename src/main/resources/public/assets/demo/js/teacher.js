@@ -28,7 +28,7 @@ function buscar(){
       );
     }
     // AJAX
-    var url = BASE_URL + 'teacher/carrer/' + valCarrer + '/search?name=' + document.getElementById('txtName').value;
+    var url = BASE_URL + 'teacher/' + valCarrer + '/search?name=' + document.getElementById('txtName').value;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
       if (xhr.readyState == XMLHttpRequest.DONE) {

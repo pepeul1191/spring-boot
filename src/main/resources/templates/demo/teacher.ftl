@@ -40,6 +40,14 @@
 <div class="container" id="workspace">
   <div class="row">
     <div class="col-md-6">
+      <h5>Universidad de Lima, Plana Docente</h5>
+    </div>
+    <div class="col-md-6">
+      <label for="" id="message"></label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
       <p>${code} - ${name}</p>
     </div>
     <div class="col-md-6">
@@ -50,8 +58,8 @@
   <div class="row">
     <div class="col-md-3">
       <div class="form-group">
-        <label for="slcTypes">Tipos de Pokemones</label>
-        <select class="form-control" id="slcTypes">
+        <label for="slcCarrers">Carreras</label>
+        <select class="form-control" id="slcCarrers">
           <option value="E"></option>
         </select>
       </div>
@@ -69,7 +77,8 @@
       </div>
     </div>
   </div>
-  <div class="row" id="pokemons">
+  <div class="row" id="teachers">
+
   </div>
 </div>
   <#if jss?has_content>
